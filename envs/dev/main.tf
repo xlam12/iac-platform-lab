@@ -23,4 +23,20 @@ provider "google" {
 }
 
 # Placeholder for modules we will add later
+module "network" {
+  source = "../../modules/network"
 
+  vpc_name = "dev-vpc"
+  region   = var.region
+
+  subnets = {
+    public = {
+      name = "dev-public-subnet"
+      cidr = "10.10.1.0/24"
+    }
+    private = {
+      name = "dev-private-subnet"
+      cidr = "10.10.2.0/24"
+    }
+  }
+}
