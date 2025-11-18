@@ -1,7 +1,7 @@
 ## Immediate Review (High-Level)
 
 Ideal structure:
-
+```
 iac-platform-lab/
 ├── modules/
 │   ├── network/
@@ -12,5 +12,6 @@ iac-platform-lab/
 ├── backend.tf
 ├── global_variables.tf
 └── README.md
-
+```
 This matches the Level-2 modular architecture we want.
+
