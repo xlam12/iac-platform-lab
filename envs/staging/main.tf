@@ -23,4 +23,20 @@ provider "google" {
 }
 
 # Placeholder for modules we will add later
+module "network" {
+  source = "../../modules/network"
 
+  vpc_name = "staging-vpc"
+  region   = var.region
+
+  subnets = {
+    public = {
+      name = "staging-public-subnet"
+      cidr = "10.20.1.0/24"
+    }
+    private = {
+      name = "staging-private-subnet"
+      cidr = "10.20.2.0/24"
+    }
+  }
+}
