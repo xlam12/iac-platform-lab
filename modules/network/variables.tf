@@ -9,10 +9,11 @@ variable "region" {
 }
 
 variable "subnets" {
-  description = "Map of subnets to create"
+  description = "Map of subnets with primary + secondary ranges"
   type = map(object({
-    name = string
-    cidr = string
+    name         = string
+    primary_cidr = string
+    pod_cidr     = string
+    service_cidr = string
   }))
 }
-
